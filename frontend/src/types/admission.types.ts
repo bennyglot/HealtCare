@@ -13,7 +13,7 @@ export interface IPatient {
 }
 
 export interface IPatientDetails {
-    patient_id: number;
+    patient_id: string;
     hospitalization_case_number: number;
     admission_date: string;
     admission_time: string;

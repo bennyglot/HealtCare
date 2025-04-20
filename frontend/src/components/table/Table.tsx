@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useTable, TableProps } from "./useTable";
+import './table.css';
 
-export function Table<T extends Record<string, any>>({ data, onRowClick}: TableProps<T>) {
+export function Table<T extends { patient_id: string } & Record<string, any>>(
+    { data, onRowClick, selectedPatientId: selectedRowId }: TableProps<T> 
+) {
   const { headers, rows, handleRowClick } = useTable(data, onRowClick);
-  if (!data || data.length === 0) return <div>No data</div>;
 
   if (!rows || rows.length === 0) return <div>No data</div>;
 
   return (
-<>
-    <div>
+    <div className="table-responsive"> 
       <table className="">
         <thead>
           <tr>
@@ -19,17 +20,25 @@ export function Table<T extends Record<string, any>>({ data, onRowClick}: TableP
           </tr>
         </thead>
         <tbody>
-          {data.map((row, idx) => (
-            <tr key={idx} onClick={() => handleRowClick(row)} style={{ cursor: onRowClick ? "pointer" : "default" }}>
+          {rows.map((row, idx) => {
+            console.log('Patient:', row.patient_id, 'Selected Patient ID:', selectedRowId);
+          return (
+            <tr
+              key={row.patient_id || idx}
+              onClick={() => handleRowClick(row)}
+              style={{ cursor: onRowClick ? "pointer" : "default" }}
+              className={row.patient_id === selectedRowId ? 'selected-row' : ''}
+            >
               {headers.map((header) => (
-                <td key={header}>{row[header]}</td>
+                <td key={header} data-label={header}>{row[header]}</td>
               ))}
-            </tr>
-          ))}
+      </tr>
+)
+          }
+           
+          )}
         </tbody>
       </table>
     </div>
-   
-    </>
   );
 }

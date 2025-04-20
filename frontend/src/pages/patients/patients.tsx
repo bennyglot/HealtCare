@@ -7,7 +7,7 @@ import { Pagination } from "../../components/pagination/Pagination";
 import { Filters } from "../../components/filters/Filters";
 
 export const Patients = () => {
-    const { patients, page, setPage, itemsPerPage, setItemsPerPage, handleFiltersChange, isPanelVisible, setIsPanelVisible } = usePatients();
+    const { patients, page, setPage, itemsPerPage, setItemsPerPage, handleFiltersChange, isPanelVisible, setIsPanelVisible, selectedPatient } = usePatients();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -29,6 +29,10 @@ export const Patients = () => {
         navigate('/patients');
     };
 
+    useEffect(() => {
+        console.log('Selected Patient:', selectedPatient);
+    }, [selectedPatient]);
+
     return (
         <>
             <div className="patients-labresults-container">
@@ -37,6 +41,7 @@ export const Patients = () => {
                     <Table
                         data={patients.data}
                         onRowClick={handleRowClick}
+                        selectedPatientId={selectedPatient?.patient_id}
                     />
                     <Pagination
                         itemsPerPage={itemsPerPage}

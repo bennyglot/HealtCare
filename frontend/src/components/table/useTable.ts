@@ -4,6 +4,7 @@ import { useMemo } from "react";
 export interface TableProps<T> {
   data: T[];
   onRowClick?: (row: T) => void;
+  selectedPatientId?: string | null; 
 }
 
 export interface TableHook<T> {
@@ -17,10 +18,10 @@ export const useTable = <T extends Record<string, any>>(
     onRowClick?: (row: T) => void
 ): TableHook<T> => {
     const headers = useMemo(() => {
-        const excludedKeys = ['_id'];
+        const excludedKeys = ['_id', 'patient_id'];
         if (!data || data.length === 0) return [];
         const keys = Object.keys(data[0]);
-        
+
         return keys.filter(key => !excludedKeys.includes(key));
     }, [data]);
 

@@ -1,20 +1,18 @@
-import  { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
-const AppLayout = lazy(() => import('../components/AppLayout'));
-const Patients = lazy(() => import('../pages/patients/patients'));
-const LabResults = lazy(() => import('../pages/labResult/labResults'));
+import {AppLayout} from '../components/AppLayout';
+import {Patients} from '../pages/patients/patients';
+import { LabResults } from '../pages/labResult/labResults';
 
 export const AppRoutes = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route path="patients" element={<Patients />}>
-            <Route path=":patientId/labs" element={<LabResults />} />
+    <Routes>
+      {/* App container route */}
+      <Route path="/" element={<AppLayout />}>
+          <Route path="patients" element={<Patients />} >
+            <Route path=":patientId" element={<LabResults />}>
           </Route>
-        </Route>
-      </Routes>
-    </Suspense>
+         </Route>
+      </Route>
+    </Routes>
   );
 };

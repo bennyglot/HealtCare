@@ -37,6 +37,12 @@ i know that this is very important!!!
 i did all by our own
 write in react hook way.
 
+filter module not complete with logic we can do dependecied filters reset 
+
+the very basic with power of generic for all 
+
+patient select row 
+
 eslint
 
 didnt use theme icons 

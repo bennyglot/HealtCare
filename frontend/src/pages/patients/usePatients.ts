@@ -13,7 +13,7 @@ export const usePatients = () => {
 
     const { fetchApi, loading } = useApi();
     const { useAppSelector, dispatch } = useRedux();
-    const { patients } = useAppSelector(store => store.patients);
+    const { patients, selectedPatient  } = useAppSelector(store => store.patients);
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -71,6 +71,7 @@ export const usePatients = () => {
         setItemsPerPage,
         handleFiltersChange,
         isPanelVisible,
-        setIsPanelVisible
+        setIsPanelVisible, 
+        selectedPatient
     }
 }
