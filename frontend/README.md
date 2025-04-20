@@ -40,3 +40,5 @@ write in react hook way.
 eslint
 
 didnt use theme icons 
+
+test unit can use playright or cypress for UI test unit

@@ -49,4 +49,6 @@ i would build the solution with folder that can support many apps with shared en
 
 didnt manage to create package for enums and types so there is duplicate in backend and front the same resource.
 
+test choose jest for test rest api --> not implemant
+
 
