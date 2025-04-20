@@ -4,6 +4,7 @@ import app from "../..";
 describe("Patients API", () => {
   it("GET /patients should return a list of patients", async () => {
     const res = await request(app).get("/api/patients");
+    debugger;
     expect(res.statusCode).toBe(200);
   });
 

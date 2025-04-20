@@ -32,7 +32,11 @@ didnt manage to create package for enums and types so there is duplicate in back
 
 didnt use any package for ui, didnt do it responsive for media queries,
 
+i know that this is very important!!!
+
 i did all by our own
 write in react hook way.
+
+eslint
 
 didnt use theme icons 

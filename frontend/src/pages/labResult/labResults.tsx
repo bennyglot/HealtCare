@@ -24,3 +24,5 @@ export const LabResults = () => {
         </div>
     );
 }
+
+export default LabResults;
