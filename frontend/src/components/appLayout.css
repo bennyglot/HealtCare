@@ -1,0 +1,33 @@
+.main-content {
+   
+    transition: margin-left 0.3s ease;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+
+.app-layout.sidebar-open .main-content {
+    margin-left: 250px;
+}
+
+.app-layout.sidebar-closed .main-content {
+    margin-left: 80px; 
+}
+
+
+@media (max-width: 768px) {
+    .app-layout.sidebar-open .main-content {
+        margin-left: 200px; 
+    }
+
+    .app-layout.sidebar-closed .main-content {
+        margin-left: 50px; 
+    }
+}
+
+
+ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}

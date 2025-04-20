@@ -1,0 +1,66 @@
+.lab-result-item {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Label and value columns */
+  gap: 5px 10px; /* Row and column gap */
+  font-size: 0.85rem; /* Smaller font */
+  line-height: 1.4;
+  color: #495057;
+}
+
+.lab-result-item span:nth-child(odd) { /* Style for labels */
+  font-weight: 500;
+  color: #6c757d;
+  text-align: right;
+}
+
+.lab-result-item span:nth-child(even) { /* Style for values */
+  color: #212529;
+}
+
+.lab-result-item-container {
+  /* Container styles if needed */
+  width: 100%;
+}
+
+.lab-result-item-table {
+  width: 100%; /* Make table take full width of its container */
+  border-collapse: collapse; /* Remove gaps between cells */
+  font-size: 0.85rem; /* Consistent font size */
+  line-height: 1.4;
+}
+
+.lab-result-item-table th,
+.lab-result-item-table td {
+  text-align: left; /* Align text to the left */
+  padding: 6px 8px; /* Adjust padding */
+  border-bottom: 1px solid #e9ecef; /* Lighter border between rows */
+  vertical-align: top; /* Align content to the top of the cell */
+}
+
+.lab-result-item-table th {
+  background-color: transparent; /* Remove header background */
+  font-weight: 600; /* Make headers bolder */
+  color: #495057;
+  border-bottom-width: 2px; /* Slightly thicker border below header */
+  border-color: #dee2e6;
+}
+
+/* Style the first column (Property names) */
+.lab-result-item-table td:first-child {
+  font-weight: 500;
+  color: #6c757d;
+  width: 150px; /* Adjust width for property names */
+  white-space: nowrap; /* Prevent property names from wrapping */
+  text-transform: capitalize; /* Capitalize first letter */
+}
+
+/* Style the second column (Values) */
+.lab-result-item-table td:last-child {
+  color: #212529;
+  word-break: break-word; /* Allow long values to wrap */
+}
+
+/* Remove border from the last row */
+.lab-result-item-table tr:last-child td {
+  border-bottom: none;
+}

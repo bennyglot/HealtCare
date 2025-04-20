@@ -1,0 +1,45 @@
+.labresults-content { /* Style the container holding LabResults */
+  background-color: #f8f9fa; /* Light background */
+  border-left: 1px solid #dee2e6; /* Subtle border */
+  padding: 15px;
+  height: 100%; /* Make it fill the panel height */
+  overflow-y: auto; /* Allow scrolling */
+  box-sizing: border-box;
+}
+
+.labresults-content h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #343a40;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.labresults-content p { /* Style for 'no results' message */
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Styles for the Collapsable component within LabResults */
+.labresults-content .collapsable {
+  margin-bottom: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  /* No rounded corners */
+}
+
+.labresults-content .collapsable-header {
+  background-color: #f1f3f5;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.labresults-content .collapsable-content {
+  padding: 10px 12px;
+  font-size: 0.85rem;
+}

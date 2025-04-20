@@ -1,0 +1,79 @@
+.patients-labresults-container {
+  display: flex;
+  height: calc(100vh - 60px); /* Example: Adjust based on your header/layout */
+  overflow: hidden; /* Prevent container scroll */
+  transition: all 0.3s;
+}
+
+.patients-table {
+  flex: 1; /* Takes remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Allow table area to scroll */
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  overflow: auto;
+  transition: all 0.3s;
+}
+
+.labresults-panel {
+  height: 100%; /* Full height of the container */
+  position: relative; /* Needed for absolute positioning of close button */
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  background-color: #f8f9fa; /* Match LabResults background */
+  transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease; /* Added padding transition */
+  overflow: hidden; /* Hide content when collapsed */
+  opacity: 1;
+  padding: 0; /* Ensure no padding initially that might shift content */
+  box-sizing: border-box; /* Include border/padding in width */
+}
+
+.labresults-panel.hidden {
+  width: 0; /* Collapse width */
+  opacity: 0;
+  border-left: none;
+  padding: 0; /* Ensure padding is zero when hidden */
+  /* overflow: hidden; is already set */
+}
+
+.labresults-panel .close-panel-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #aaa;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 20; /* Increased z-index to ensure it's above Outlet content */
+}
+
+.labresults-panel .close-panel-btn:hover {
+  color: #333;
+}
+
+/* Ensure the content inside the panel uses the available space */
+/* Target the specific div containing the Outlet */
+.labresults-panel > div:last-child {
+   height: 100%;
+   overflow-y: auto; /* Allow content within the Outlet wrapper to scroll */
+   padding-top: 40px; /* Add padding to prevent content from overlapping the button */
+   box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* When panel is hidden, remove padding from the content div */
+.labresults-panel.hidden > div:last-child {
+    padding-top: 0;
+}
+
+/* Example: If you have a sidebar state, adjust widths */
+.sidebar-closed .patients-labresults-container {
+  margin-left: 60px; /* or whatever your collapsed sidebar width is */
+}
+
+.sidebar-open .patients-labresults-container {
+  margin-left: 240px; /* or your expanded sidebar width */
+}

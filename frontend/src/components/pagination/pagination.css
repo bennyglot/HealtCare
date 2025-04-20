@@ -1,0 +1,78 @@
+.pagination-container {
+  display: flex; /* Arrange items horizontally */
+  justify-content: center; /* Center the pagination block */
+  align-items: center; /* Vertically align items */
+  gap: 5px; /* Space between pagination elements */
+  margin-top: 20px; /* Space above the pagination */
+  padding: 10px 0; /* Padding top/bottom */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.pagination-container button,
+.pagination-container span {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+  color: #0d6efd; /* Bootstrap primary blue */
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  min-width: 40px; /* Ensure buttons have a minimum width */
+  text-align: center;
+}
+
+/* Style for the current page number */
+.pagination-container span.current-page {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border-color: #0d6efd;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Style for disabled buttons (e.g., Previous on page 1) */
+.pagination-container button:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-color: #dee2e6;
+  cursor: not-allowed;
+}
+
+/* Hover effect for clickable buttons/numbers */
+.pagination-container button:not(:disabled):hover,
+.pagination-container span:not(.current-page):hover {
+  background-color: #e7f0ff; /* Light blue hover */
+  border-color: #b6d4fe;
+}
+
+/* Style for ellipsis (...) if used */
+.pagination-container span.ellipsis {
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  color: #6c757d;
+  padding: 8px 4px; /* Less horizontal padding */
+}
+
+/* Style for items per page selector if included */
+.pagination-container .items-per-page-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 15px; /* Space it from the page numbers */
+  border: none; /* Remove border if it's just a label + select */
+  background-color: transparent;
+}
+
+.pagination-container .items-per-page-selector label {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.pagination-container .items-per-page-selector select {
+  padding: 6px 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}

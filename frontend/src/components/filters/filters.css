@@ -1,0 +1,59 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Reduced gap */
+  align-items: flex-end;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.filter-item {
+  flex: 1 1 160px; /* Adjusted flex-basis */
+  min-width: 150px; /* Reduced min-width */
+  max-width: 250px; /* Reduced max-width */
+  background: #f8fafd;
+  border: 1px solid #e0e6ed;
+  border-radius: 4px; /* Slightly smaller radius */
+  padding: 8px 12px; /* Reduced padding */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03); /* Smaller shadow */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px; /* Reduced margin */
+  transition: box-shadow 0.2s;
+}
+
+/* Adjust AutoComplete width within filter item */
+.filter-item .auto-complete-container { /* Assuming AutoComplete has a container div */
+    width: 100%; /* Let AutoComplete fill the filter item */
+}
+/* Or target the input directly if no container */
+.filter-item input[type="text"] {
+    font-size: 0.85rem; /* Smaller font in input */
+    padding: 6px 8px; /* Smaller padding in input */
+}
+/* Adjust selected display if needed */
+.filter-item > div[style*="background: #f0f0f0"] { /* Target the selected display div */
+    padding: 4px 6px; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font */
+    margin-bottom: 3px; /* Smaller margin */
+}
+.filter-item > div[style*="background: #f0f0f0"] button { /* Target the clear button */
+    font-size: 0.9em; /* Smaller clear button */
+}
+
+.filter-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Adjusted hover shadow */
+}
+
+.filters h2 {
+  flex-basis: 100%;
+  margin-bottom: 6px; /* Reduced margin */
+  font-size: 1.0rem; /* Reduced font size */
+  color: #2a3b4c;
+  font-weight: 600;
+}
+
+/* Note: You might need to adjust the AutoComplete component's internal styling
+
+
+   to allow it to properly fit within the smaller .filter-item */   (like removing its fixed width: 250px inline style)   (like removing its fixed width: 250px inline style)
+   to allow it to properly fit within the smaller .filter-item */

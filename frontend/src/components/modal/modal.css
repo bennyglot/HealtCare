@@ -1,0 +1,96 @@
+.content-panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 999; /* Below panel, above content */
+  cursor: pointer;
+}
+
+.content-panel {
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15); /* Example shadow */
+  z-index: 1000; /* Above overlay */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Positioning */
+.panel-right {
+  top: 0;
+  right: 0;
+  width: 400px; /* Adjust width as needed */
+  height: 100%;
+  transform: translateX(0);
+  border-left: 1px solid #e0e0e0;
+}
+/* Add styles for closed state if needed, e.g., transform: translateX(100%); */
+
+.panel-left {
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  transform: translateX(0);
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.panel-top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px; /* Adjust height */
+  transform: translateY(0);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.panel-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  transform: translateY(0);
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Close Button */
+.content-panel-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+}
+.panel-left .content-panel-close-btn {
+    right: auto;
+    left: 15px;
+}
+.panel-top .content-panel-close-btn,
+.panel-bottom .content-panel-close-btn {
+    /* Adjust if needed */
+}
+
+
+.content-panel-close-btn:hover {
+  color: #333;
+}
+
+/* Panel Body */
+.content-panel-body {
+  flex-grow: 1;
+  padding: 20px;
+  padding-top: 50px; /* Space for close button */
+  overflow-y: auto;
+}
