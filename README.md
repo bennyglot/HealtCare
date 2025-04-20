@@ -18,6 +18,8 @@ backend isntructions
 
 
 The first thing that I did was to understand the data,
+Once understand the data, and arrange it in process the rest was very clear
+
 I grab the 2 documents and search for a connection, i understand that in one place, there is patient's list
 And in other lab result but  what was missing for me is the connection --> patient_id
 
