@@ -35,6 +35,7 @@
   padding: 6px 8px; /* Adjust padding */
   border-bottom: 1px solid #e9ecef; /* Lighter border between rows */
   vertical-align: top; /* Align content to the top of the cell */
+  width: 50%; /* Set both columns to 50% width */
 }
 
 .lab-result-item-table th {
@@ -49,9 +50,10 @@
 .lab-result-item-table td:first-child {
   font-weight: 500;
   color: #6c757d;
-  width: 150px; /* Adjust width for property names */
-  white-space: nowrap; /* Prevent property names from wrapping */
+  /* width: 150px; Remove fixed width */
+  white-space: normal; /* Allow property names to wrap if needed */
   text-transform: capitalize; /* Capitalize first letter */
+  word-break: break-word; /* Allow long property names to break */
 }
 
 /* Style the second column (Values) */

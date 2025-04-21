@@ -1,54 +1,80 @@
+# 🧠 Node.js Backend – Patient Management API
 
-# install
+This is the backend service for the Patient Management System. It provides a RESTful API built with Node.js and MongoDB, using a modular structure.
+
+## 📦 Install
 npm i
 
-# build
+## 🛠️ Build
 npm run build
 
-# run dev --debug mode
+## 🧪 Run in Development (Debug Mode)
 npm run dev
 
-# run 
+## 🚀 Run in Production
 npm run start
 
+---
 
-get patients
-http://localhost:3000/api/patients/?page=1&limit=20
+## 🌐 API Endpoints
 
-get patientById
-http://localhost:3000/api/patients/7792223
+- **Get Patients (with pagination & filters)**  
+  `GET http://localhost:3000/api/patients/?page=1&limit=20`
 
-get PatientTestByTestId
-http://localhost:3000/api/patients/7792223/42916
+- **Get Patient by ID**  
+  `GET http://localhost:3000/api/patients/7792223`
 
-there are patients routes,
-request with filters and pagination
+- **Get Patient Test by Test ID**  
+  `GET http://localhost:3000/api/patients/7792223/42916`
 
-missing authentication JWT token Brear token....
+---
 
+## 🧩 Features
 
-return filters from table return object:
-key and value is array of uniqe existing values,
+- Patients routes with full pagination and filter support.
+- Filters are generated dynamically based on unique values from the DB.
+  - Example filter response: `{ "gender": ["male", "female"], "status": ["active", "inactive"] }`
 
-things to do:
-handle cache,
-network cumminucation by web socket that triggered by cloude events,
-and push to client,
-build infra for mongoose?
+---
 
-i using MONGODB atlas, was wonder if better to use redis
-please send me ip so i will open access. as many as you want.
+## ⚠️ TODOs
 
-in the script i used in mongoosh as schema and in rest i used mongodb with interface
-need to choose one.
+- Authentication:
+  - JWT (Bearer token) not implemented yet.
 
-i gues in real world there were some lambda that trigger action and trigger push update to servre.
+- Caching:
+  - Add Redis/memory-based caching for improved performance.
 
-the structure of the solution is for excersice not for product,
-i would build the solution with folder that can support many apps with shared enums and types,
+- Real-Time Communication:
+  - Plan to use WebSocket triggered by cloud events to push updates to the client.
 
-didnt manage to create package for enums and types so there is duplicate in backend and front the same resource.
+- Mongoose Integration:
+  - Script uses Mongoose schemas, REST routes use plain MongoDB with interfaces.
+  - Need to consolidate to a single DB strategy.
 
-test choose jest for test rest api --> not implemant
+- Redis:
+  - Currently using MongoDB Atlas.
+  - Considering replacing or combining with Redis for performance.
+  - Please share your IP(s) if access is needed — happy to whitelist.
 
+- Folder Structure:
+  - Current setup is minimal for exercise purposes.
+  - In a real-world app, would implement modular structure with shared `enums` and `types`.
 
+- Shared Types:
+  - No shared type package yet — backend and frontend have duplicate types.
+
+- Testing:
+  - Plan to use **Jest** for REST API testing.
+  - Test suite not yet implemented.
+
+---
+
+## 💡 Dev Notes
+
+- The backend is structured for learning and demonstration purposes — not production-ready.
+- Ideal setup would include:
+  - Shared packages for types/enums between backend and frontend.
+  - WebSocket/SSE for real-time updates.
+  - Caching layer for heavy operations.
+  - Scalable folder structure for multi-app support.

@@ -1,50 +1,75 @@
-## install
+# ⚛️ React Frontend – Patient Management App
+
+This is the frontend for the Patient Management System, built with React and TypeScript using a modular and hook-based approach.
+
+## 📦 Install
 npm i
 
-# build
+## 🛠️ Build
 npm run build
 
-# run dev --debug mode
+## 🧪 Run in Development (Debug Mode)
 npm run dev
 
-# run 
+## 🚀 Run in Production
 npm run start
 
-http://localhost:5173/patients
+App URL: http://localhost:5173/patients
 
-filters:
-getting from request available filters with unique values
-the filters components with pagination pros trigger table result.
-in side bar there is list of test result.
+## 🧩 Features
 
+- Filters:
+  - Fetched from backend with unique values.
+  - Pagination integrated with filters.
+  - Filters trigger updates to the table results.
 
-TODO:
-a lot
+- Sidebar:
+  - Shows a list of test results per patient.
 
-missing authentication JWT token Brear token....
+- Patient Table:
+  - Allows row selection.
 
-now i am pulling every 20 second bad practice,
-want to create real time application socket SSE....
+## ⚠️ TODOs
 
-today i pull all the data in update i wll have only the patients tha update and i will update only them,
+- Authentication:
+  - JWT (Bearer token) is not yet implemented.
 
-didnt manage to create package for enums and types so there is duplicate in backend and front the same resource.
+- Real-Time Updates:
+  - Currently using polling every 20 seconds (not ideal).
+  - Plan to switch to WebSockets or Server-Sent Events (SSE).
 
-didnt use any package for ui, didnt do it responsive for media queries,
+- Optimized Data Updates:
+  - Currently fetching all data every update.
+  - Future plan: fetch only updated patients and patch them.
 
-i know that this is very important!!!
+- Shared Types:
+  - No shared enums/types package yet.
+  - Backend and frontend have duplicate type definitions.
 
-i did all by our own
-write in react hook way.
+- UI/UX:
+  - No UI library used.
+  - No responsive design or media queries.
+  - Needs improvement (I know this is important!).
 
-filter module not complete with logic we can do dependecied filters reset 
+- Filter Logic:
+  - Basic filter module implemented.
+  - Needs logic for dependent filters and reset functionality.
 
-the very basic with power of generic for all 
+- Generic Filter System:
+  - Foundation in place, can be extended for more power and reusability.
 
-patient select row 
+- ESLint:
+  - Configured and in use.
 
-eslint
+- Icons & Theming:
+  - No theme or icon library added yet.
 
-didnt use theme icons 
+- Testing:
+  - No tests implemented yet.
+  - Plan to add UI/unit tests with Playwright or Cypress.
 
-test unit can use playright or cypress for UI test unit
+## 💡 Dev Notes
+
+- Entire UI built manually with no external UI frameworks.
+- Written using React Hooks.
+- Focus was on functionality first, enhancements planned as next steps.

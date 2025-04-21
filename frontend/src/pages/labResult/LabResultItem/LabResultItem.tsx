@@ -1,19 +1,17 @@
 import { ILabResult } from "../../../types";
-import './labresultItem.css'; // Ensure CSS is imported
+import './labresultItem.css'; 
 
 export interface ILabResultItem {
     labResult: ILabResult;
 }
 
 export const LabResultItem = ({labResult}: ILabResultItem) => {
-    const excludeFields = ['patient_id']; // Fields to exclude from the table
+    const excludeFields = ['patient_id']; 
 
-    // Filter and prepare data entries for the table
     const dataEntries = Object.entries(labResult)
                               .filter(([key]) => !excludeFields.includes(key));
 
     return (
-        // Use the class on the container or table itself
         <div className="lab-result-item-container">
             <table className="lab-result-item-table">
                 <thead>
@@ -25,8 +23,8 @@ export const LabResultItem = ({labResult}: ILabResultItem) => {
                 <tbody>
                     {dataEntries.map(([key, value]) => (
                         <tr key={key}>
-                            <td>{key.replace(/_/g, ' ')}</td> {/* Replace underscores for readability */}
-                            <td>{value !== null && value !== undefined ? String(value) : 'N/A'}</td> {/* Handle null/undefined */}
+                            <td>{key.replace(/_/g, ' ')}</td>
+                            <td>{value !== null && value !== undefined ? String(value) : 'N/A'}</td>
                         </tr>
                     ))}
                 </tbody>
